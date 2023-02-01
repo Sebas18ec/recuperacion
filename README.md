@@ -1,3 +1,14 @@
+## Proyecto React Js Sebastian Belalcázar Medio Ambiente
+
+Este proyecto muestra la calidad del aire usando un JSON de OpenAQ
+Fuente: https://public.opendatasoft.com/explore/dataset/openaq/export/?disjunctive.city&disjunctive.location&disjunctive.measurements_parameter&sort=measurements_lastupdated
+
+Y muestra los sitios de protección de medio ambiente más visitados.
+
+Despliegue:
+https://medioambiente-gamma.vercel.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
