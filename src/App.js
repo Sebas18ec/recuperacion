@@ -1,26 +1,33 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar';
-import Card from './components/card';
-import React from 'react';
+import React, { useState }  from 'react';
 import { Route, Routes } from 'react-router';
 import AboutUs from './components/about-us';
 import Home from './components/home';
-import places from './data/data.json'
+
 
 
 
 function App() {
   
 
-  const dataComponents = places.places.map((place) => {
-    return(
-      <div className="col p-4">
-            <Card title={place.country} description={place.location} measurements_sourcename={place.measurements_sourcename} measurements_value={place.measurements_value} measurements_unit={place.measurements_unit}/>
-      </div>
-    );
-  });
+  const [count, setCount] = useState(0);
 
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
+  const styles = {
+    container: {
+      width: "70%",
+      height: "100px",
+      background: "green",
+      margin: "auto",
+      textAlign: "center",
+      paddingTop: "30px"
+    }
+  };
 
   
   return (
@@ -35,10 +42,15 @@ function App() {
       <Routes>
         <Route path="/airquality" element={
           <div className="container">
-            <h1>Información sobre la calidad del aire</h1>
+            <h1>Contador Personal de Reciclaje</h1>
               <div className="row">
-                {dataComponents}
+                  <div style={styles.container}>
+                    <button onClick={handleClick}>CLICK SI RECICLASTE HOY</button>
+                    <p>Has reciclado {count} veces.</p>
+                  </div>
               </div>
+
+              <img src="https://media0.giphy.com/media/ZI4owdgI8ob1LtkFjt/giphy.gif" style={{height: 400,width: 400,}} />
           </div>}>
         </Route>
         <Route path="/about" element={<AboutUs />}></Route>
